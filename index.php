@@ -1,6 +1,20 @@
 <?php
 session_start();
 
+if($_SERVER['REQUEST_METHOD']==='POST'){
+    $_SESSION['level'] = $_POST['level'];
+    $_SESSION['operator'] = $_POST['operator'];
+    $_SESSION['num_questions'] = $_POST['num_questions'];
+    $_SESSION['max_diff'] = $_POST['max_diff'];
+    $_SESSION['custom_min'] = $_POST['custom_min'] ?? 1;
+    $_SESSION['custom_max'] = $_POST['custom_max'] ?? 10;
+    $_SESSION['current_question'] = 0;
+    $_SESSION['correct'] = 0;
+    $_SESSION['wrong'] = 0;
+
+    header("Location: quiz.php");
+    exit;
+}
 
 ?>
 
