@@ -20,9 +20,15 @@ $num1 = rand($min, $max);
 $num2 = rand($min, $max);
 
 switch ($operator) {
-    case '+': $answer = $num1 + $num2; break;
-    case '-': $answer = $num1 - $num2; break;
-    case '*': $answer = $num1 * $num2; break;
+    case '+':
+        $answer = $num1 + $num2;
+        break;
+    case '-':
+        $answer = $num1 - $num2;
+        break;
+    case '*':
+        $answer = $num1 * $num2;
+        break;
 }
 
 $choices = [$answer];
@@ -57,12 +63,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quiz</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <div class="container">
         <h1>Question <?= $_SESSION['current_question'] + 1 ?>/<?= $num_questions ?></h1>
@@ -79,4 +87,5 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <p>Score: <?= $_SESSION['correct'] ?> Correct, <?= $_SESSION['wrong'] ?> Wrong</p>
     </div>
 </body>
+
 </html>

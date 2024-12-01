@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-if($_SERVER['REQUEST_METHOD']==='POST'){
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $_SESSION['level'] = $_POST['level'];
     $_SESSION['operator'] = $_POST['operator'];
     $_SESSION['num_questions'] = $_POST['num_questions'];
