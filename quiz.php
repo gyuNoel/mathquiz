@@ -34,6 +34,25 @@ while (count($choices) < 4) {
     }
 }
 shuffle($choices);
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $user_answer = $_POST['user_answer'];
+    if ($user_answer == $_POST['correct_answer']) {
+        $_SESSION['correct']++;
+    } else {
+        $_SESSION['wrong']++;
+    }
+    $_SESSION['current_question']++;
+
+    if ($_SESSION['current_question'] >= $num_questions) {
+        header("Location: results.php");
+        exit;
+    } else {
+        header("Location: quiz.php");
+        exit;
+    }
+}
+
 ?>
 
 <!DOCTYPE html>
