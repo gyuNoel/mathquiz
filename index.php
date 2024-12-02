@@ -25,14 +25,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Math Quiz</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <style>
-    body {
-        font-family: Arial, Helvetica, sans-serif;
-    }
 </style>
 
 <body>
+    <div class="container">
     <h1>Simple Mathematics Game</h1>
     <form action="" method="POST">
         <h2>Settings</h2>
@@ -56,7 +55,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <input type="number" name="max_diff" min="1" required><br>
         <button type="submit">Start Quiz</button>
     </form>
-
     </div>
 </body>
 
